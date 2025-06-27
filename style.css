@@ -1,0 +1,81 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    display: flex;
+    margin-left: 200px;
+    font-family: sans-serif;
+}
+
+.right{
+    border: 1px solid #000;
+    width: 70%;
+}
+.top{
+    position: relative;
+    left: 100px;
+    margin-top: 70px;
+}
+
+.left{
+    border: 1px solid #000;
+    width: 30%;
+    position: relative;
+    background-image: url(images/bg-main-desktop.png);
+    color: #fff;
+
+}
+#one{
+    position: absolute;
+    top: 10px;
+    left: 20px;
+}
+.number{
+    position: absolute;
+    bottom: 30px;
+    left: 20px;
+}
+.jane{
+    display: flex;
+    justify-content: space-between;
+    width: 130%;
+    margin-top: 20px;
+    font-size: smaller;
+}
+.bottom{
+    position: relative;
+    left: 150px;
+    margin-top: 20px;
+}
+#zero{
+    position:absolute;
+    top: 85px;
+    right: 20px;
+}
+form{
+    margin:auto ;
+    margin:200px 250px;
+    width: 60%;
+  
+}
+#MM, #YY{
+    width: 50px;
+}
+#Cardholder , #number{
+    width: 300px;
+    height: 20px;
+}
+#CVC{
+    margin-left: 10px;
+    width: 170px;
+
+}
+#comfirm{
+    width: 300px;
+    height: 35px;
+    color: #fff;
+    background-color: hsl(278, 68%, 11%);
+    border-radius: 5px;
+    margin-top: 20px;
+}
