@@ -15,50 +15,58 @@
   </style>
 </head>
 <body>
-<div class="left">
-      <div class="top">
-          <img src="images/card-logo.svg" id="one" width="70px">
-        <img src="images/bg-card-front.png" width="350px" id="two">
-        <div class="number"> <h2> 0000 0000 0000 0000</h2>
-          <div class="jane"><p>JANE APPLESEED</p>
-          00/00</div>
-        </div>
-      </div>
+  <main>
+    <section class="left">
+      <figure class="front">
+        <img src="./images/bg-card-front.png" alt="">
+        <figcaption class="frontCap">
+         <figure class="cardImg">
+          <img src="./images/card-logo.svg" alt="">
+         </figure>
+         <p class="cardNo">0000 0000 0000 0000</p>
+         <span class="below"><p class="cardName">JANE APPLESEED</p> 
+          <span class="date"><p class="mm">00</p>/ <p class="yy">00</p></span>
+         </span>
+        </figcaption>
+      </figure>
       
-     <div class="bottom">
-      <img src="images/bg-card-back.png" width="350px" id="three">
-     <p id="zero"> 000</p>
-      </div>
-  </div>
-</div>
-<div class="right">
-    <form action="https//google.com">
+      <figure class="back">
+        <img src="./images/bg-card-back.png" alt="">
+        <figcaption>
+          <p class="cvcCard">000</p>
+        </figcaption>
+      </figure>
+    </section>
+    <section class="right">
+      <article class="form">
+      <label for="name" >CARDHOLDER NAME</label>
+      <input type="text" id="name" placeholder="e.g. Jane Appleseed">
+      <div class="nameError">Can't be blank</div><br>
 
-      <label for="Cardholder">Cardholder Name</label><br>
-        <input type="text" id="Cardholder" placeholder="  e.g. Jane Appleseed"><br>
+      <label for="number">CARD NUMBER</label>
+      <input type="text" id="number" placeholder="e.g. 1234 5678 9123 0000" maxlength="16">
+      <div class="err"><div class="numberError">Can't be blank</div> <div class="NaNError">Wrong format, numbers only</div></div><br>
 
-      <br><label for="Number">Card Number</label><br>
-      <input type="text" id="number"placeholder=" e.g. 1234 5678 9123 0000">
-    <br>
-    <br>
-      Exp. Date (MM/YY)   CVC<br>
-      <input type="text" id="MM"placeholder="MM">
-      <input type="text"id="YY" placeholder="YY">
-      
-      <input type="text"id="CVC" placeholder="e.g. 123"><br>
-      <input type="submit" value="Confirm" id="comfirm">
-    </form>
-  </div>
-
-  <!-- Completed state start -->
-
-  <!-- Thank you!
-  We've added your card details
-  Continue -->
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+      <article class="exp">
+       <DIv>EXP. DATE (MM/YY) <span> CVC</span></DIv>       
+      </article>
+      <section class="expDate">
+        <input type="text" name="" id="mm" placeholder="MM" maxlength="2" required>
+        <input type="text" name="" id="yy" placeholder="YY" maxlength="2" required>
+        <input typecompleted="text" name="" id="cvc" placeholder="e.g. 123" maxlength="3">
+      </section>
+      <div class="eee"><div class="expError">Can't be blank</div> <div class="cvcError">Can't be blank</div></div>
+      <br>
+      <button class="confirm">Confirm</button>
+    </section>
+  </article>
+  <article class="completed">
+    <figure class="tick"><img src="./images/icon-complete.svg" alt=""></figure>
+    <h1>THANK YOU</h1>
+    <P class="added">We've added your card details</P>
+    <button class="continue" onclick="location.reload()">Continue</button> 
+  </article>
+  </main>
+   <script src="script.js"></script>
 </body>
 </html>

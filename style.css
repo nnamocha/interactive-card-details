@@ -1,81 +1,207 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
-body{
+:root{
+  --Linear-gradient-active-input-border: hsl(249, 99%, 64%) to hsl(278, 94%, 30%);
+  --Red-400-error: hsl(0, 100%, 66%);
+
+/* ### Neutral */
+
+--White: hsl(0, 100%, 100%);
+--Gray-200: hsl(270, 3%, 87%);
+--Gray-400: #acb4be;
+--Purple-950: hsl(278, 68%, 11%);  
+}
+main{
     display: flex;
-    margin-left: 200px;
+    width: 100%;
+    height: 100%;
     font-family: sans-serif;
 }
-
-.right{
-    border: 1px solid #000;
-    width: 70%;
+img{
+    width: 100%;
 }
-.top{
-    position: relative;
-    left: 100px;
-    margin-top: 70px;
-}
-
 .left{
-    border: 1px solid #000;
-    width: 30%;
+    width:40% ;
+    background-image: url(./images/bg-main-desktop.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: white;
+    height: 100vh;
+    padding: 2rem;
+    padding-top: 4rem;
+}
+.front, .back{
     position: relative;
-    background-image: url(images/bg-main-desktop.png);
-    color: #fff;
+    width: 400px;
 
 }
-#one{
+.front{
+    left: 100px;
+}
+.back{
+    left:200px;
+    top: 50px;
+}
+.cardImg{
+    width: 100px;
+    padding-left: 2rem;
+}
+.frontCap{
     position: absolute;
     top: 10px;
-    left: 20px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
 }
-.number{
-    position: absolute;
-    bottom: 30px;
-    left: 20px;
+.cardNo{
+    padding: 3rem 0 1rem 2rem;
+    width: 100%;
+    font-size: 30px;
 }
-.jane{
+.below{
     display: flex;
     justify-content: space-between;
-    width: 130%;
-    margin-top: 20px;
-    font-size: smaller;
+    gap: 7rem;
+    padding-left: 2rem;
+    width: 100%;
 }
-.bottom{
-    position: relative;
-    left: 150px;
-    margin-top: 20px;
+.date{
+    display: flex;
 }
-#zero{
-    position:absolute;
-    top: 85px;
-    right: 20px;
+.back{
+    figcaption{
+        position: absolute;
+        right: 3rem;
+        top: 6rem;
+        font-size: 20px;
+    }
 }
-form{
-    margin:auto ;
-    margin:200px 250px;
-    width: 60%;
-  
+.right{
+    width: 70%;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-#MM, #YY{
+.form{
+    width: 50%;
+    /* border: solid; */
+    margin: auto;
+    margin-top: 20%;
+    margin-left: 30%;
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+}
+.expError,
+.numberError,
+.nameError,
+.NaNError,
+.cvcError{
+    color: var(--Red-400-error);
+    display: none;
+}
+input[type=text]{
+    height: 30px;
+    border-radius: 5px;
+    padding: 0 .5rem;
+    border: 1.5px solid var(--Gray-400);
+}
+.cardName{
+    text-transform: uppercase;
+}
+#mm, #yy{
     width: 50px;
 }
-#Cardholder , #number{
-    width: 300px;
-    height: 20px;
+#cvc{
+    border-radius: 5px;
+    padding-left: .5rem;
 }
-#CVC{
-    margin-left: 10px;
-    width: 170px;
+.exp{
+    display: flex;
+}
+.eee,.err{
+    display: flex;
+    gap: 3rem;
+}
+.expDate{
+    display: flex;
+    gap:1rem;
+}
+button{
+    height: 40px;
+    width: 100%;
+    color: #fff;
+    background-color: var(--Purple-950);
+    border: none;
+    border-radius: 5px;
 
 }
-#comfirm{
-    width: 300px;
-    height: 35px;
-    color: #fff;
-    background-color: hsl(278, 68%, 11%);
-    border-radius: 5px;
-    margin-top: 20px;
+
+.completed{
+    margin: auto;
+    margin-right: 20%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    display: none;
+
+}
+button{
+    cursor: pointer;
+}
+.tick{
+    width: 100px;
+}
+.false{
+    border-color: var(--Red-400-error);
+}
+
+@media screen and (max-width:768px){
+    main{
+        flex-direction: column;
+    }
+    .left{
+        background: none;
+        background-image: url(./images/bg-main-mobile.png);
+        background-repeat: no-repeat;
+        width: 100%;
+        background-size: cover;
+        height: 400px;
+    }
+    .right{
+        width: 100%;
+        margin: 0;
+    }
+    .form{
+        width: 100%;
+        margin: 0;
+        margin: auto;
+        padding: 1rem;
+    }
+    .back,.front{
+        width: 360px;
+    }
+    .back{
+        left: -10px;
+        top: -250px;
+    }
+    .front{
+        left: -20px;
+        bottom: -100px;
+        z-index: 4;
+    }
+    .back figCaption{
+        top: 5.5rem;
+    }
+    .completed{
+        padding: 2rem;
+    }
 }
